@@ -16,7 +16,6 @@ makeCacheMatrix <- function(x = matrix(), SET = "FALSE") {
   if (SET) {
     cachedMatrix <<- list(1)
     cachedInverse <<- list(1)
-    len <<- length(cachedMatrix)
     
     inverse <- cacheSolve(x, cachedMatrix, cachedInverse)
     inverse
