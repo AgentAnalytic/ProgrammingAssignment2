@@ -1,5 +1,7 @@
 
 
+
+## This function creates a special "matrix" which will be used to cache the previously inputed matrix 'x' and its inverse
 ## This function "makeCacheMatrix((x = matrix(), SET = "FALSE")" takes in two arguments
 ## where 'x' is the inputed matrix and 'SET' is used for initializing the list that will store the inputed matrix(s)
 ## IMPORTANT : when executing this function 'makeCacheMatrix' for the FIRST time ONLY ,
@@ -24,24 +26,20 @@ makeCacheMatrix <- function(x = matrix(), SET = "FALSE") {
     inverse <- cacheSolve(x, cachedMatrix, cachedInverse)
     inverse
   }
-  
-  
-  
-  
-  
+    
   
 }
 
 
+
+## This function does a linear search on the cachedMatrix with the inputed matrix 'x'
+## if the search is positive then the cached inverse matrix is returned else
+## the inputed matrix 'x' is inserted at the end of the list 'cachedMatrix' and its inverse
+## at the end of the list 'cachedInverse' and then finally the computed inverse is returned(If search is not positive)
 ## This function "cacheSolve(x, cachedMatrix, cachedInverse)", takes in three agruments
 ## where : 'x' is inputed matrix,
 ## 'cachedMatrix' is a list of cached matrix that were inputed previously,
 ## 'cachedInverse' is the list of the previously cached matrix inputs.
-## This function does a linear search on the cachedMatrix with the inputed matrix 'x'
-## if the search is positive then the cached inverse matrix is returned else
-## the inputed matrix 'x' is inserted at the end of the list 'cachedMatrix' and its inverse
-## at the end of the list 'cachedInverse', finally the computed inverse is returned
-
 
 
 cacheSolve <- function(x, cachedMatrix, cachedInverse) {
